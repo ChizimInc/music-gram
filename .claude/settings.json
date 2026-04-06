@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "command": "npx eslint --fix $CLAUDE_FILE_PATH"
+      }
+    ]
+  },
+  "permissions": {
+    "deny": [
+      "Read(./.env*)",
+      "Write(./.env*)",
+      "Edit(./.env*)"
+    ]
+  }
+}

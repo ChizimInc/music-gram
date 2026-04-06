@@ -5,6 +5,7 @@ export interface User {
   email: string;
   displayName: string;
   photoURL: string;
+  avatarBgColor: string;
   createdAt: Timestamp;
   likedSongIds: string[];
   followedPlaylistIds: string[];
