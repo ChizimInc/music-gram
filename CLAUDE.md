@@ -40,6 +40,7 @@ Spotify Clone - React Native / Expo app with TypeScript
 - `npx expo start --android` — start on Android
 - `npx expo start --ios` — start on iOS
 - `npx expo start --web` — start on web
+- `npx expo run:android` - start directly (native)
 - `npx tsc --noEmit` — type-check without emitting
 
 ## Architecture

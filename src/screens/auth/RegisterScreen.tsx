@@ -13,6 +13,8 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { AuthStackParamList } from '../../types';
 import { register } from '../../services/auth';
 import AuthInput from '../../components/AuthInput';
+import GoogleSignInButton from '../../components/auth/GoogleSignInButton';
+import useGoogleAuth from '../../hooks/useGoogleAuth';
 import Colors from '../../constants/colors';
 import Layout from '../../constants/layout';
 
@@ -20,6 +22,7 @@ type RegisterNav = StackNavigationProp<AuthStackParamList, 'Register'>;
 
 export default function RegisterScreen() {
   const navigation = useNavigation<RegisterNav>();
+  const { request, promptAsync } = useGoogleAuth();
   const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -37,6 +40,7 @@ export default function RegisterScreen() {
     setLoading(true);
     try {
       await register(email.trim(), password, displayName.trim());
+      navigation.navigate('EmailVerification');
     } catch (error: unknown) {
       const message = error instanceof Error ? error.message : 'Registration failed';
       Alert.alert('Error', message);
@@ -85,7 +89,18 @@ export default function RegisterScreen() {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <View style={styles.dividerRow}>
+          <View style={styles.dividerLine} />
+          <Text style={styles.dividerText}>or</Text>
+          <View style={styles.dividerLine} />
+        </View>
+
+        <GoogleSignInButton
+          onPress={() => promptAsync()}
+          disabled={!request}
+        />
+
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.loginLink}>
           <Text style={styles.linkText}>
             Already have an account? <Text style={styles.linkBold}>Log in</Text>
           </Text>
@@ -142,5 +157,23 @@ const styles = StyleSheet.create({
   linkBold: {
     color: Colors.primary,
     fontWeight: 'bold',
+  },
+  dividerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: Layout.padding.lg,
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: Colors.divider,
+  },
+  dividerText: {
+    color: Colors.textSecondary,
+    marginHorizontal: Layout.padding.md,
+    fontSize: Layout.fontSize.md,
+  },
+  loginLink: {
+    marginTop: Layout.padding.lg,
   },
 });

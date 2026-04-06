@@ -13,6 +13,8 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { AuthStackParamList } from '../../types';
 import { login } from '../../services/auth';
 import AuthInput from '../../components/AuthInput';
+import GoogleSignInButton from '../../components/auth/GoogleSignInButton';
+import useGoogleAuth from '../../hooks/useGoogleAuth';
 import Colors from '../../constants/colors';
 import Layout from '../../constants/layout';
 
@@ -20,6 +22,7 @@ type LoginNav = StackNavigationProp<AuthStackParamList, 'Login'>;
 
 export default function LoginScreen() {
   const navigation = useNavigation<LoginNav>();
+  const { request, promptAsync } = useGoogleAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -74,7 +77,18 @@ export default function LoginScreen() {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+        <View style={styles.dividerRow}>
+          <View style={styles.dividerLine} />
+          <Text style={styles.dividerText}>or</Text>
+          <View style={styles.dividerLine} />
+        </View>
+
+        <GoogleSignInButton
+          onPress={() => promptAsync()}
+          disabled={!request}
+        />
+
+        <TouchableOpacity onPress={() => navigation.navigate('Register')} style={styles.registerLink}>
           <Text style={styles.linkText}>
             Don&apos;t have an account? <Text style={styles.linkBold}>Sign up</Text>
           </Text>
@@ -131,5 +145,23 @@ const styles = StyleSheet.create({
   linkBold: {
     color: Colors.primary,
     fontWeight: 'bold',
+  },
+  dividerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: Layout.padding.lg,
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: Colors.divider,
+  },
+  dividerText: {
+    color: Colors.textSecondary,
+    marginHorizontal: Layout.padding.md,
+    fontSize: Layout.fontSize.md,
+  },
+  registerLink: {
+    marginTop: Layout.padding.lg,
   },
 });
