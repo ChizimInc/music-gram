@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 52c051ca72c0c587be89902bca713c618d1bc3a3 ChizimInc <cezarchizim4@gmail.com> 1775489596 +0300	branch: Created from HEAD
+52c051ca72c0c587be89902bca713c618d1bc3a3 171972d57f65d8d7cfe2ff035357a42d20acb719 ChizimInc <cezarchizim4@gmail.com> 1775489745 +0300	commit: fix auth flow, add sign in with google, user avatar and more
