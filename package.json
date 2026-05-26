@@ -1,5 +1,5 @@
 {
-  "name": "music-gram",
+  "name": "@music-gram/mobile",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
@@ -9,19 +9,21 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@music-gram/shared-types": "1.0.0",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-navigation/bottom-tabs": "^7.15.5",
     "@react-navigation/native": "^7.1.33",
     "@react-navigation/stack": "^7.8.5",
-    "expo": "~55.0.6",
-    "expo-auth-session": "~55.0.8",
+    "expo": "~55.0.26",
+    "expo-auth-session": "~55.0.16",
     "expo-av": "^16.0.8",
-    "expo-status-bar": "~55.0.4",
-    "expo-web-browser": "~55.0.9",
+    "expo-dev-client": "~55.0.35",
+    "expo-status-bar": "~55.0.6",
+    "expo-web-browser": "~55.0.16",
     "firebase": "^12.10.0",
     "react": "19.2.0",
-    "react-native": "0.83.2",
-    "react-native-gesture-handler": "^2.30.0",
+    "react-native": "0.83.6",
+    "react-native-gesture-handler": "~2.30.0",
     "react-native-safe-area-context": "~5.6.2",
     "react-native-screens": "~4.23.0"
   },
