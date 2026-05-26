@@ -1,6 +1,0 @@
-0000000000000000000000000000000000000000 52c051ca72c0c587be89902bca713c618d1bc3a3 ChizimInc <cezarchizim4@gmail.com> 1773588390 +0200	commit (initial): main structure
-52c051ca72c0c587be89902bca713c618d1bc3a3 52c051ca72c0c587be89902bca713c618d1bc3a3 ChizimInc <cezarchizim4@gmail.com> 1775489596 +0300	checkout: moving from main to feat/auth-flow
-52c051ca72c0c587be89902bca713c618d1bc3a3 171972d57f65d8d7cfe2ff035357a42d20acb719 ChizimInc <cezarchizim4@gmail.com> 1775489745 +0300	commit: fix auth flow, add sign in with google, user avatar and more
-171972d57f65d8d7cfe2ff035357a42d20acb719 52c051ca72c0c587be89902bca713c618d1bc3a3 ChizimInc <cezarchizim4@gmail.com> 1775489824 +0300	checkout: moving from feat/auth-flow to main
-52c051ca72c0c587be89902bca713c618d1bc3a3 ccc07078ce8fcc78910c8f35146e0356dbe996e2 ChizimInc <cezarchizim4@gmail.com> 1775489831 +0300	pull origin main: Fast-forward
-ccc07078ce8fcc78910c8f35146e0356dbe996e2 c230d8c56c498fcdff4a1e5bda60ed1513510554 ChizimInc <cezarchizim4@gmail.com> 1779781479 +0300	commit: add shared-types package
