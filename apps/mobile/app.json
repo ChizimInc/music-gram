@@ -23,7 +23,7 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.daikifujii.musicgram",
+      "package": "com.caktus.musicgram",
       "permissions": [
         "android.permission.RECORD_AUDIO",
         "android.permission.MODIFY_AUDIO_SETTINGS"
@@ -40,6 +40,7 @@
       "eas": {
         "projectId": "7e58506e-9ef1-4f71-9848-819233615aa4"
       }
-    }
+    },
+    "owner": "caktus3664"
   }
 }
